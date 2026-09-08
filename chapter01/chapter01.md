@@ -75,9 +75,9 @@ order_status에 cancelled와 refunded가 함께 존재하는 것을 보고, 두 
 ### 필요한 데이터 파일
 
 - [ ] `customers.csv`
-- [O] `products.csv`
-- [O] `orders.csv`
-- [O] `order_items.csv`
+- [x] `products.csv`
+- [x] `orders.csv`
+- [x] `order_items.csv`
 
 ### 필요한 컬럼 후보
 
@@ -269,11 +269,11 @@ LLM의 제안 5개가 전부 건수만을 기준으로 잡았다. 이는 LLM이 
 
 다음 항목을 확인합니다.
 
-- [O] 실제 이름·이메일·전화번호 등 고객 개인정보를 Prompt에 사용하지 않았습니다.
-- [O] API Key를 코드나 Notebook에 직접 작성하지 않았습니다.
-- [O] `.env` 실제 내용을 캡처하거나 업로드하지 않았습니다.
-- [O] GitHub Token, 비밀번호, 내부 URL이 캡처에 보이지 않습니다.
-- [O] 제출 전 이미지까지 다시 확인했습니다.
+- [x] 실제 이름·이메일·전화번호 등 고객 개인정보를 Prompt에 사용하지 않았습니다.
+- [x] API Key를 코드나 Notebook에 직접 작성하지 않았습니다.
+- [x] `.env` 실제 내용을 캡처하거나 업로드하지 않았습니다.
+- [x] GitHub Token, 비밀번호, 내부 URL이 캡처에 보이지 않습니다.
+- [x] 제출 전 이미지까지 다시 확인했습니다.
 
 ### 나의 판단
 
@@ -289,8 +289,8 @@ notebooks/ch01_ai_data_analysis_intro.ipynb
 
 ### 내 환경 상태
 
-- [O] 아직 환경설정 전이라 Notebook 위치만 확인했습니다.
-- [ ] 환경설정이 완료되어 Notebook을 직접 실행했습니다.
+- [ ] 아직 환경설정 전이라 Notebook 위치만 확인했습니다.
+- [x] 환경설정이 완료되어 Notebook을 직접 실행했습니다.
 
 ### 환경설정 완료 학생만 작성
 
@@ -307,28 +307,46 @@ import seaborn as sns
 DATA_DIR = Path('../data/raw')
 sns.set_theme(style='whitegrid')
 ```
+```python
+customers = pd.read_csv(DATA_DIR / 'customers.csv')
+customers.head()
+```
+```python
+orders = pd.read_csv(DATA_DIR / 'orders.csv')
+orders.head()
+```
+```python
+order_items = pd.read_csv(DATA_DIR / 'order_items.csv')
+order_items.head()
+```
+```python
+products = pd.read_csv(DATA_DIR / 'products.csv')
+products.head()
+```
 
 #### 실행 결과
 
 ```text
-오류 없이 실행되었는지 작성하세요.
+오류없이 실행되었다.
 ```
 
 #### 결과 관찰
 
-실행 결과에서 확인한 사실을 작성하세요.
+DATA_DIR 경로로 네 파일을 읽어 컬럼명을 확인했다. customers는 6개, orders는 5개 컬럼, order_items는 5개, products는 4개 컬럼이었다.
 
 #### 나의 해석과 판단
 
-현재 Notebook이 본격 분석이 아니라 starter scaffold라는 의미를 자신의 말로 설명하세요.
+라이브러리 import와 데이터 경로 지정만 되어 있어 분석 자체는 하지 않는다. 앞으로 작업할 환경이 준비되었는지 확인하는 용도로 보인다.
 
 #### 한계와 추가 확인 사항
 
-Chapter 02 또는 Chapter 03에서 추가로 확인해야 할 내용을 작성하세요.
+금액 계산식이 실제 결제 금액과 같은지,
+한 주문에 여러 카테고리가 섞였을 때 어떻게 집계할지 확인이 필요하다.
 
 #### Evidence
 
-![STEP 7 Notebook 실행 결과](images/step07_notebook_result.png)
+![STEP 7 Notebook 실행 결과](images/step07_notebook_result(1).png)
+![실행 결과2](images/step07_notebook_result(2).png)
 
 > 환경설정 전이라면 이 이미지는 생략할 수 있습니다.
 
@@ -365,21 +383,21 @@ LLM을 그대로 믿을 경우 분석에 환각 현상이 일어날 수 있기 �
 
 ## 9. 최종 제출 체크리스트
 
-- [O] 원래 업무 질문과 구체화한 분석 질문을 작성했습니다.
-- [O] 질문에 필요한 데이터 파일과 컬럼 후보를 정리했습니다.
-- [O] LLM Prompt와 답변 요약을 작성했습니다.
-- [O] LLM 제안을 실제 데이터 관점에서 검증했습니다.
-- [O] 각 핵심 STEP의 결과 관찰을 작성했습니다.
-- [O] 각 핵심 STEP의 나의 해석과 판단을 작성했습니다.
-- [O] 업무·분석적 의미를 작성했습니다.
-- [O] 한계와 추가 확인 사항을 작성했습니다.
-- [O] 핵심 실행 Evidence 이미지를 첨부했습니다.
-- [O] 이미지가 Markdown에서 정상 표시됩니다.
-- [O] 개인정보가 없습니다.
-- [O] API Key·Secret·Token이 없습니다.
-- [O] 개인 GitHub 저장소에 업로드했습니다.
-- [O] GitHub에서 Markdown과 이미지가 정상 표시됩니다.
-- [O] 아래 최종 파일 URL이 정상적으로 열립니다.
+- [x] 원래 업무 질문과 구체화한 분석 질문을 작성했습니다.
+- [x] 질문에 필요한 데이터 파일과 컬럼 후보를 정리했습니다.
+- [x] LLM Prompt와 답변 요약을 작성했습니다.
+- [x] LLM 제안을 실제 데이터 관점에서 검증했습니다.
+- [x] 각 핵심 STEP의 결과 관찰을 작성했습니다.
+- [x] 각 핵심 STEP의 나의 해석과 판단을 작성했습니다.
+- [x] 업무·분석적 의미를 작성했습니다.
+- [x] 한계와 추가 확인 사항을 작성했습니다.
+- [x] 핵심 실행 Evidence 이미지를 첨부했습니다.
+- [x] 이미지가 Markdown에서 정상 표시됩니다.
+- [x] 개인정보가 없습니다.
+- [x] API Key·Secret·Token이 없습니다.
+- [x] 개인 GitHub 저장소에 업로드했습니다.
+- [x] GitHub에서 Markdown과 이미지가 정상 표시됩니다.
+- [x] 아래 최종 파일 URL이 정상적으로 열립니다.
 
 ### 최종 파일 URL
 
@@ -393,8 +411,8 @@ https://github.com/aeuyui/llm-data-analysis-study/blob/main/chapter01/chapter01.
 
 ### 수행 상태
 
-- [ ] COMPLETE
-- [O] PARTIAL
+- [x] COMPLETE
+- [ ] PARTIAL
 
 ### 내가 가장 중요하게 내린 판단 1개
 

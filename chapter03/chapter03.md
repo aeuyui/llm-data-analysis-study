@@ -6,7 +6,7 @@
 - 이름: 배성윤
 - GitHub ID: aeuyui
 - 작성일: 2026-09-21
-- 최종 제출 URL: https://github.com/aeuyui/llm-data-analysis-study/tree/main/chapter03
+- 최종 제출 URL: https://github.com/aeuyui/llm-data-analysis-study/blob/main/chapter03/chapter03.md
 
 ## 1. 데이터 로딩과 구조 확인
 ### 실행/결과
